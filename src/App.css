@@ -1,0 +1,4 @@
+/* Only keeping essential styles and removing conflicting ones */
+#root {
+  margin: 0 auto;
+}
