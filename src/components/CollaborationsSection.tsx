@@ -20,31 +20,36 @@ const CollaborationsSection = () => {
     x: 0,
     y: 0
   });
-  const collaborators: Collaborator[] = [{
-    name: "Javvaji Products",
-    logo: "image.png",
-    role: "Manufacturing Unit",
-    website: "https://www.indiamart.com/javvaji-products/",
-    description: "Collaborated on optimizing production processes and implementing data-driven quality on sambrani dhoop products."
-  }, {
-    name: "Ignis Veda",
-    logo: "ignisveda.jpg",
-    role: "Technology Solutions",
-    website: "#",
-    description: "Worked together on developing innovative software solutions and digital transformation initiatives."
-  },  {
-    name: "Reddix",
-    logo: "reddix.png",
-    role: "Digital Innovation",
-    website: "#",
-    description: "From improving web solutions to cutting-edge 3D printing, we leverage innovative technology solutions to elevate your brand"
-  }, {
-    name: "Thinkers Club",
-    logo: "thinkerclub.jpg",
-    role: "Innovation Hub",
-    website: "#",
-    description: "Worked together on fostering innovation and implementing creative problem-solving approaches."
-  }];
+  const collaborators: Collaborator[] = [
+    {
+      name: "Javvaji Products",
+      logo: "image.png",
+      role: "Manufacturing Unit",
+      website: "https://www.indiamart.com/javvaji-products/",
+      description: "Collaborated on optimizing production processes and implementing data-driven quality on sambrani dhoop products."
+    },
+    {
+      name: "Ignis Veda",
+      logo: "ignisveda.jpg",
+      role: "Technology Solutions",
+      website: "https://ignisvedasynergies.vercel.app/",
+      description: "Worked together on developing innovative software solutions and digital transformation initiatives."
+    },
+    {
+      name: "Reddix",
+      logo: "reddix.png",
+      role: "Digital Innovation",
+      website: "https://reddix.co.in/",
+      description: "From improving web solutions to cutting-edge 3D printing, we leverage innovative technology solutions to elevate your brand"
+    },
+    {
+      name: "Thinkers Club",
+      logo: "thinkerclub.jpg",
+      role: "Innovation Hub",
+      website: "#",
+      description: "Worked together on fostering innovation and implementing creative problem-solving approaches."
+    }
+  ];
   useEffect(() => {
     if (isInView) {
       controls.start("visible");

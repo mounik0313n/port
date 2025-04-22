@@ -45,7 +45,7 @@ const ExperienceSection = () => {
 
   const experiences: Experience[] = [
     {
-      title: "Data Analyst Intern",
+      title: "Data Science Intern",
       company: "Futurense",
       location: "Remote",
       period: "June 2024 - August 2024",
@@ -87,7 +87,7 @@ const ExperienceSection = () => {
       location: "Vijayawada, Andhra Pradesh",
       period: "2019 - 2020",
       type: "education",
-      logo: "/placeholder.svg",
+      logo: "school.jpg",
       score: "Percentage: 98.7%",
       description: ["Completed Secondary Education with distinction"],
     },

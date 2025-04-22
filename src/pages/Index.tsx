@@ -1,15 +1,15 @@
-
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 import AboutSection from "../components/AboutSection";
 import SkillsSection from "../components/SkillsSection";
 import ProjectsSection from "../components/ProjectsSection";
+import CollaborationsSection from "../components/CollaborationsSection";
+import EventsConductedSection from "../components/EventsConductedSection";
 import AchievementsSection from "../components/AchievementsSection";
 import ExperienceSection from "../components/ExperienceSection";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
-import CollaborationsSection from "../components/CollaborationsSection";
 import { AnimatePresence, motion } from "framer-motion";
 
 const Index = () => {
@@ -87,6 +87,7 @@ const Index = () => {
           <SkillsSection />
           <ProjectsSection />
           <CollaborationsSection />
+          <EventsConductedSection />
           <AchievementsSection />
           <ExperienceSection />
           <ContactSection />

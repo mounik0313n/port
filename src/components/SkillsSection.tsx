@@ -24,29 +24,29 @@ const SkillsSection = () => {
       { name: "Flask", logo: "flask .png" },
       { name: "Power BI", logo: "power bi.png" },
       { name: "MySQL", logo: "sql.png" },
-      { name: "Git", logo: "/lovable-uploads/git.png" },
+      { name: "Git", logo: "git.png" },
     ],
     "Cloud Platforms": [
-      { name: "AWS", logo: "/lovable-uploads/aws.png" },
-      { name: "Azure", logo: "/lovable-uploads/azure.png" },
+      { name: "AWS", logo: "aws.png" },
+      { name: "Azure", logo: "azure .png" },
     ]
   };
 
   const certifications: Certification[] = [
     {
       name: "Azure Data Scientist Associate",
-      image: "/lovable-uploads/azure-data-scientist.jpg",
+      image: "a2.png",
       link: "#"
     },
     {
       name: "Azure Fundamentals",
-      image: "/lovable-uploads/azure-fundamentals.jpg",
+      image: "a1.png",
       link: "#"
     },
     {
       name: "IBM Data Science",
-      image: "/lovable-uploads/ibm-data-science.jpg",
-      link: "#"
+      image: "data-science-orientation.png",
+      link: "https://www.credly.com/badges/57412b00-9f0d-4073-87f1-5dacc9fcef11/linked_in?t=skzwwi"
     }
   ];
 
