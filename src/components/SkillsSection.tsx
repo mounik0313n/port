@@ -36,12 +36,12 @@ const SkillsSection = () => {
     {
       name: "Azure Data Scientist Associate",
       image: "a2.png",
-      link: "#"
+      link: "https://learn.microsoft.com/api/credentials/share/en-us/JavvajiMounikprasad-5387/EE75A5FC7E7961AB?sharingId=4F7F69A433C16FA5"
     },
     {
       name: "Azure Fundamentals",
       image: "a1.png",
-      link: "#"
+      link: "https://learn.microsoft.com/api/credentials/share/en-us/JavvajiMounikprasad-5387/10A94EF37303A252?sharingId=4F7F69A433C16FA5"
     },
     {
       name: "IBM Data Science",

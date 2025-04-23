@@ -13,7 +13,7 @@ const Footer = () => {
           </div>
           
           <div className="text-center md:text-left mb-4 md:mb-0">
-            <p>© {new Date().getFullYear()} Data Engineer Portfolio. All Rights Reserved.</p>
+            <p>© {new Date().getFullYear()} </p>
           </div>
           
           <div className="flex space-x-6">

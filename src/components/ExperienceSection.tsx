@@ -73,7 +73,7 @@ const ExperienceSection = () => {
     },
     {
       title: "12th Class (Science)",
-      company: "Jaggayyapet Rural College",
+      company: "Jaggayyapet Residential college",
       location: "Jaggayyapet, Andhra Pradesh",
       period: "2020 - 2022",
       type: "education",

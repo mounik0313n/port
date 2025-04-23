@@ -45,14 +45,14 @@ const ContactSection = () => {
             </div>
             
             <div className="flex space-x-4 mt-8">
-              <a href="#" className="bg-navy hover:bg-tech text-white hover:text-navy p-3 rounded-full transition-colors duration-300" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/javvaji-mounik-prasad/" className="bg-navy hover:bg-tech text-white hover:text-navy p-3 rounded-full transition-colors duration-300" aria-label="LinkedIn">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="bg-navy hover:bg-tech text-white hover:text-navy p-3 rounded-full transition-colors duration-300" aria-label="GitHub">
+              <a href="https://github.com/mounik0313n" className="bg-navy hover:bg-tech text-white hover:text-navy p-3 rounded-full transition-colors duration-300" aria-label="GitHub">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="#" className="bg-navy hover:bg-tech text-white hover:text-navy p-3 rounded-full transition-colors duration-300" aria-label="Twitter">
-                <Twitter className="w-5 h-5" />
+              <a href="mailto:mounik0313n@gmail.com?subject=Contact from Portfolio" className="bg-navy hover:bg-tech text-white hover:text-navy p-3 rounded-full transition-colors duration-300" aria-label="Gmail">
+                <Mail className="w-5 h-5" />
               </a>
             </div>
           </div>
