@@ -121,7 +121,7 @@ const AboutSection = () => {
               className="flex flex-wrap gap-4"
               variants={itemVariants}
             >
-              {["Python", "SQL", "Spark", "AWS", "Kafka", "Docker"].map((tech, index) => (
+              {[].map((tech, index) => (
                 <motion.div
                   key={tech}
                   className="px-4 py-2 bg-navy-light/30 rounded-full border border-tech/20 text-tech text-sm"
