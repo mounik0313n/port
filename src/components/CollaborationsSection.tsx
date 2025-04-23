@@ -22,13 +22,6 @@ const CollaborationsSection = () => {
   });
   const collaborators: Collaborator[] = [
     {
-      name: "Javvaji Products",
-      logo: "image.png",
-      role: "Manufacturing Unit",
-      website: "https://www.indiamart.com/javvaji-products/",
-      description: "Collaborated on optimizing production processes and implementing data-driven quality on sambrani dhoop products."
-    },
-    {
       name: "Ignis Veda",
       logo: "ignisveda.jpg",
       role: "Technology Solutions",
@@ -40,7 +33,7 @@ const CollaborationsSection = () => {
       logo: "reddix.png",
       role: "Digital Innovation",
       website: "https://reddix.co.in/",
-      description: "From improving web solutions to cutting-edge 3D printing, we leverage innovative technology solutions to elevate your brand"
+      description: "Contributing as a part of team to develop ai based solutions for business development"
     },
     {
       name: "Thinkers Club",
@@ -140,7 +133,7 @@ const CollaborationsSection = () => {
       }}>
           <h2 className="section-heading text-white">Collaborations</h2>
           <p className="text-slate max-w-2xl mb-12 typewriter-text">
-            Working with industry leaders to deliver exceptional data solutions.
+            Working with industries with integrating ai based bussiness development ideas .
           </p>
         </motion.div>
         
