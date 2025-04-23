@@ -23,11 +23,11 @@ const ProjectsSection = () => {
     {
       title: "Summarize Mate",
       description: "Built an AI-powered content processing tool using AssemblyAI for audio transcription and Gemini API for text summarization. Targeting education, media, legal, and customer support industries with features for fast, concise content processing and enhanced productivity.",
-      image: "/placeholder.svg",
+      image: "summerize ai .jpeg",
       tools: ["AssemblyAI", "Gemini API", "React", "TypeScript", "Node.js"],
       links: {
-        github: "#",
-        demo: "#",
+        github: "https://github.com/mounik0313n/Projects",
+        demo: "",
       },
       icon: <Zap className="w-8 h-8 text-tech" />,
       date: "Mar 8, 2025"
@@ -35,22 +35,22 @@ const ProjectsSection = () => {
     {
       title: "MED24 Healthcare Platform",
       description: "Developed a comprehensive healthcare web app with features including medicine delivery, doctor consultations, lab bookings, AI chatbot powered by GEMINI API Pro, and ML-powered diabetes predictor. Implemented secure JWT authentication and automated email notifications.",
-      image: "/placeholder.svg",
-      tools: ["React", "Node.js", "Gemini API", "ML", "JWT", "MongoDB"],
+      image: "/med24.jpeg",
+      tools: ["HTML", "CSS", "JavaScript", "Gemini API", "ML", "JWT", "SQL"],
       links: {
-        github: "#",
-        demo: "#",
+        github: "https://github.com/mounik0313n/Project-1",
+        demo: "med24.jpeg",
       },
       icon: <Bot className="w-8 h-8 text-tech" />,
       date: "Jul 1, 2024"
     },
     {
-      title: "MCQ Generator",
+      title: "Food waste management",
       description: "Used Flask, AWS Bedrock, and Llama3-8B-Instruct for real-time, structured text generation.",
-      image: "/placeholder.svg",
-      tools: ["Python", "Airflow", "AWS", "S3", "Redshift"],
+      image: "Screenshot 2025-04-23 at 13.05.34.png",
+      tools: ["Python", "Machinelearning", "Roboflow", "Flask"],
       links: {
-        github: "#",
+        github: "https://github.com/mounik0313n/Food-waste-/tree/main",
       },
       icon: <Database className="w-8 h-8 text-tech" />,
       date: "Jun 15, 2024"
