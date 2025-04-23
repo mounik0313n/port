@@ -21,16 +21,52 @@ const ProjectsSection = () => {
   
   const projects: Project[] = [
     {
+      title: "Railway Track Prediction System",
+      description: "Developed an innovative system using acoustic sensors for real-time railway track monitoring and prediction. Implemented machine learning algorithms to analyze acoustic patterns and predict potential track issues before they occur, enhancing railway safety and maintenance efficiency.",
+      image: "Screenshot 2025-04-23 at 13.43.13.png",
+      tools: ["Python", "Machine Learning", "IoT", "Acoustic Sensors", "Real-time Analytics"],
+      links: {
+        github: "https://github.com/mounik0313n/railway-track-prediction",
+        demo: "",
+      },
+      icon: <Network className="w-8 h-8 text-tech" />,
+      date: "december 2024 - Still working"
+    },
+    {
+      title: "US Pathway Analytics",
+      description: "Created an interactive Power BI dashboard analyzing US immigration pathways and trends. Visualized complex immigration data with dynamic filters, predictive analytics, and comprehensive reporting features to help users understand immigration patterns and opportunities.",
+      image: "Screenshot 2025-04-23 at 13.34.43.png",
+      tools: ["Python", "Power BI", "Data Analytics", "SQL", "Data Visualization", "ETL"],
+      links: {
+        github: "https://github.com/mounik0313n/us-pathway-analytics",
+        demo: "https://drive.google.com/file/d/18U399L4GLyLeUGH17i7ydEN59o_uDL9x/view?usp=drivesdk",
+      },
+      icon: <Database className="w-8 h-8 text-tech" />,
+      date: "August 2024"
+    },
+    {
+      title: "VC Connect Platform",
+      description: "Built a comprehensive platform connecting startups with venture capitalists. Features include profile matching, pitch deck sharing, virtual meetings, and investment tracking. Implemented secure document sharing and real-time communication tools.",
+      image: "/reddix.png",
+      tools: ["React", "Node.js", "WebRTC", "MongoDB", "AWS"],
+      links: {
+        github: "https://github.com/mounik0313n/vc-connect",
+        demo: "",
+      },
+      icon: <Server className="w-8 h-8 text-tech" />,
+      date: "February 2024"
+    },
+    {
       title: "Summarize Mate",
       description: "Built an AI-powered content processing tool using AssemblyAI for audio transcription and Gemini API for text summarization. Targeting education, media, legal, and customer support industries with features for fast, concise content processing and enhanced productivity.",
       image: "summerize ai .jpeg",
-      tools: ["AssemblyAI", "Gemini API", "React", "TypeScript", "Node.js"],
+      tools: ["AssemblyAI", "Gemini API", "Python"],
       links: {
         github: "https://github.com/mounik0313n/Projects",
         demo: "",
       },
       icon: <Zap className="w-8 h-8 text-tech" />,
-      date: "Mar 8, 2025"
+      date: "March 2025"
     },
     {
       title: "MED24 Healthcare Platform",
@@ -42,19 +78,19 @@ const ProjectsSection = () => {
         demo: "med24.jpeg",
       },
       icon: <Bot className="w-8 h-8 text-tech" />,
-      date: "Jul 1, 2024"
+      date: "July 2024"
     },
     {
-      title: "Food waste management",
-      description: "Used Flask, AWS Bedrock, and Llama3-8B-Instruct for real-time, structured text generation.",
+      title: "Food Waste Management",
+      description: "Developed a machine learning-based system to track and reduce food waste using computer vision and predictive analytics. Integrated with Roboflow for object detection and Flask for backend services.",
       image: "Screenshot 2025-04-23 at 13.05.34.png",
       tools: ["Python", "Machinelearning", "Roboflow", "Flask"],
       links: {
         github: "https://github.com/mounik0313n/Food-waste-/tree/main",
       },
       icon: <Database className="w-8 h-8 text-tech" />,
-      date: "Jun 15, 2024"
-    },
+      date: "June 2024"
+    }
   ];
 
   useEffect(() => {
@@ -153,7 +189,9 @@ const ProjectsSection = () => {
                   )}
                   
                   <a
-                    href="#"
+                    href={project.links.demo || project.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="ml-auto inline-flex items-center text-tech hover:opacity-75 transition-opacity group"
                   >
                     <span className="mr-1">View Details</span>
