@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ExternalLink, Github, ArrowRight, Zap, Bot, Database, Network, Server } from 'lucide-react';
+import { motion, useAnimation, useInView, useTransform, useSpring } from 'framer-motion';
 
 interface Project {
   title: string;
@@ -16,9 +17,11 @@ interface Project {
 
 const ProjectsSection = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const sectionRef = useRef<HTMLElement>(null);
-  
+  const isInView = useInView(sectionRef);
+  const controls = useAnimation();
+
   const projects: Project[] = [
     {
       title: "Railway Track Prediction System",
@@ -94,124 +97,250 @@ const ProjectsSection = () => {
   ];
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({
+        x: e.clientX,
+        y: e.clientY
+      });
     };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
+  useEffect(() => {
+    if (isInView) {
+      controls.start('visible');
+    }
+  }, [isInView, controls]);
+
   return (
-    <section id="projects" className="py-20 bg-navy" ref={sectionRef}>
-      <div className="container mx-auto px-4 md:px-8">
-        <h2 className="section-heading text-white mb-12">Projects</h2>
+    <section id="projects" className="py-20 bg-navy relative overflow-hidden" ref={sectionRef}>
+      {/* Advanced Background System */}
+      <div className="absolute inset-0">
+        {/* Neural Network Grid */}
+        <div className="absolute inset-0 bg-[url('/neural-grid.svg')] opacity-10 animate-pulse" />
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className={`bg-navy-light rounded-lg overflow-hidden border border-gray-700 transition-all duration-500 
-                hover:border-tech hover:shadow-[0_0_25px_rgba(100,255,218,0.2)] transform hover:-translate-y-2
-                ${isVisible 
-                  ? "opacity-100 translate-y-0" 
-                  : "opacity-0 translate-y-10"}`}
-              style={{ transitionDelay: `${index * 200}ms` }}
-            >
-              <div className="relative h-48 overflow-hidden group">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-all duration-500 transform 
-                    group-hover:scale-110 group-hover:rotate-2"
-                />
-                <div className="absolute inset-0 bg-tech/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute top-4 right-4 transform rotate-0 group-hover:rotate-12 transition-transform duration-300">
-                  {project.icon}
-                </div>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-xl font-semibold text-slate-lightest group-hover:text-tech transition-colors">
-                    {project.title}
-                  </h3>
-                  <span className="text-sm text-tech">{project.date}</span>
-                </div>
-                <p className="text-slate mb-4 leading-relaxed">{project.description}</p>
-                
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tools.map((tool) => (
-                    <span
-                      key={tool}
-                      className="px-3 py-1 bg-navy text-slate text-sm rounded-full border border-gray-700
-                        hover:border-tech hover:text-tech transition-all duration-300"
-                    >
-                      {tool}
-                    </span>
-                  ))}
-                </div>
-                
-                <div className="flex items-center space-x-4">
-                  {project.links.github && (
-                    <a
-                      href={project.links.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-slate hover:text-tech transition-colors duration-300 transform hover:scale-110"
-                      aria-label="GitHub Repository"
-                    >
-                      <Github size={20} />
-                    </a>
-                  )}
-                  {project.links.demo && (
-                    <a
-                      href={project.links.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-slate hover:text-tech transition-colors duration-300 transform hover:scale-110"
-                      aria-label="Live Demo"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
-                  )}
-                  
-                  <a
-                    href={project.links.demo || project.links.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="ml-auto inline-flex items-center text-tech hover:opacity-75 transition-opacity group"
-                  >
-                    <span className="mr-1">View Details</span>
-                    <ArrowRight size={16} className="transform transition-transform group-hover:translate-x-1" />
-                  </a>
-                </div>
-              </div>
-            </div>
+        {/* AI Particles */}
+        <div className="absolute inset-0 overflow-hidden">
+          {Array.from({ length: 30 }).map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute bg-tech/20 rounded-full"
+              style={{
+                width: `${Math.random() * 8 + 4}px`,
+                height: `${Math.random() * 8 + 4}px`,
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+              }}
+              animate={{
+                y: [0, -100],
+                opacity: [0.2, 0],
+                scale: [1, 0.5],
+              }}
+              transition={{
+                duration: Math.random() * 20 + 10,
+                repeat: Infinity,
+                delay: Math.random() * 10,
+              }}
+            />
           ))}
         </div>
+
+        {/* AI Circuit Pattern */}
+        <div className="absolute inset-0 bg-[url('/circuit-pattern.svg')] opacity-5" />
+      </div>
+
+      <div className="container mx-auto px-4 md:px-8 relative">
+        {/* Section Header with AI Theme */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-tech via-blue-400 to-tech mb-4 relative inline-block">
+            Projects
+            <motion.div 
+              className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-transparent via-tech to-transparent"
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            />
+          </h2>
+          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+            Exploring the intersection of AI and Data Engineering through innovative projects
+          </p>
+        </motion.div>
+
+        {/* Projects Grid with 3D Effects */}
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.1
+              }
+            }
+          }}
+          initial="hidden"
+          animate={controls}
+        >
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              variants={{
+                hidden: { opacity: 0, y: 50 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+              }}
+              onHoverStart={() => setHoveredIndex(index)}
+              onHoverEnd={() => setHoveredIndex(null)}
+              className="group relative perspective-1000"
+            >
+              {/* Card Backdrop with Neural Effect */}
+              <div 
+                className="absolute -inset-0.5 bg-gradient-to-r from-tech via-blue-500 to-tech rounded-2xl opacity-0 
+                group-hover:opacity-30 blur transition-all duration-500"
+              />
+              
+              {/* Main Card with 3D Effect */}
+              <motion.div 
+                className="relative bg-navy-light/80 backdrop-blur-xl rounded-xl overflow-hidden border border-tech/20
+                group-hover:border-tech/50 transition-all duration-500"
+                whileHover={{
+                  scale: 1.05,
+                  rotateX: 5,
+                  rotateY: 5,
+                  transition: { duration: 0.3 }
+                }}
+              >
+                {/* Project Image with AI Overlay */}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transform transition-transform duration-700 
+                    group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy-light/95 via-navy-light/50 to-transparent" />
+                  
+                  {/* AI Tech Icon */}
+                  <motion.div 
+                    className="absolute top-4 right-4 p-3 rounded-lg bg-navy-light/80 backdrop-blur-sm 
+                    border border-tech/30 shadow-[0_0_15px_rgba(100,255,218,0.3)]"
+                    whileHover={{ rotate: 360, scale: 1.1 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    {project.icon}
+                  </motion.div>
+                </div>
+
+                {/* Content with AI Theme */}
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <motion.h3 
+                      className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-tech 
+                      group-hover:from-tech group-hover:to-blue-400 transition-all duration-300"
+                      layout
+                    >
+                      {project.title}
+                    </motion.h3>
+                    <span className="text-sm text-tech bg-tech/5 border border-tech/20 px-3 py-1 rounded-full
+                      group-hover:bg-tech/10 group-hover:border-tech/50 transition-all duration-300">
+                      {project.date}
+                    </span>
+                  </div>
+                  
+                  <p className="text-slate-300 mb-4 line-clamp-3 group-hover:line-clamp-none transition-all duration-300">
+                    {project.description}
+                  </p>
+                  
+                  {/* AI Tech Stack */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tools.map((tool) => (
+                      <motion.span
+                        key={tool}
+                        className="px-3 py-1 text-sm text-slate-300 bg-navy/50 rounded-full border border-tech/20 
+                        group-hover:text-tech group-hover:border-tech/50 group-hover:shadow-[0_0_10px_rgba(100,255,218,0.2)]
+                        transition-all duration-300"
+                        whileHover={{ scale: 1.05 }}
+                      >
+                        {tool}
+                      </motion.span>
+                    ))}
+                  </div>
+                  
+                  {/* AI Links Section */}
+                  <div className="flex items-center space-x-4 pt-4 border-t border-gray-700/50">
+                    {project.links.github && (
+                      <motion.a
+                        href={project.links.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-slate-300 hover:text-tech transition-colors duration-300"
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <Github size={22} />
+                      </motion.a>
+                    )}
+                    {project.links.demo && (
+                      <motion.a
+                        href={project.links.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-slate-300 hover:text-tech transition-colors duration-300"
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <ExternalLink size={22} />
+                      </motion.a>
+                    )}
+                    
+                    <motion.a
+                      href={project.links.demo || project.links.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ml-auto inline-flex items-center text-tech group/link"
+                      whileHover={{ x: 5 }}
+                    >
+                      <span className="mr-2 font-medium">View Details</span>
+                      <ArrowRight size={18} className="transform transition-transform group-hover/link:translate-x-1" />
+                    </motion.a>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          ))}
+        </motion.div>
         
-        <div className="text-center mt-12">
-          <a
+        {/* AI View More Button */}
+        <motion.div 
+          className="text-center mt-16"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          <motion.a
             href="#"
-            className="inline-flex items-center text-tech hover:underline group"
+            className="inline-flex items-center px-8 py-4 rounded-full bg-navy-light/80 backdrop-blur-sm 
+              border-2 border-tech/30 hover:border-tech hover:bg-tech/5 transition-all duration-300 
+              group relative overflow-hidden"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <span className="mr-2">View More Projects</span>
-            <ArrowRight size={16} className="transform transition-transform group-hover:translate-x-1" />
-          </a>
-        </div>
+            <span className="relative z-10 font-medium text-white group-hover:text-tech transition-colors duration-300">
+              View More Projects
+            </span>
+            <ArrowRight 
+              size={20} 
+              className="ml-2 text-tech transform transition-transform group-hover:translate-x-1" 
+            />
+            {/* AI Button Glow */}
+            <div className="absolute inset-0 bg-gradient-to-r from-tech/0 via-tech/20 to-tech/0 
+              opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );
