@@ -30,7 +30,7 @@ const ProjectsSection = () => {
       image: "Screenshot 2025-04-23 at 13.43.13.png",
       tools: ["Python", "Machine Learning", "IoT", "Acoustic Sensors", "Real-time Analytics"],
       links: {
-        github: "https://github.com/mounik0313n/railway-track-prediction",
+        github: "https://github.com/mounik0313n/Projects/tree/main",
         demo: "",
         doc: "https://docs.google.com/document/d/1P2r5A43rp3xBqGEZ_iwb44fHbz_a1DZJ6gySE3BHMS4/edit?usp=sharing"
       },
