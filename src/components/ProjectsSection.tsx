@@ -52,8 +52,8 @@ const ProjectsSection = () => {
     {
       title: "VC Connect Platform",
       description: "Developing a comprehensive platform connecting startups with venture capitalists. Features include profile matching, pitch deck sharing, virtual meetings, and investment tracking. Implemented secure document sharing and real-time communication tools.",
-      image: "/reddix.png",
-      tools: ["React", "Node.js", "WebRTC", "MongoDB", "AWS"],
+      image: "Screenshot 2025-04-24 at 13.40.47.png",
+      tools: [],
       links: {
         github: "https://github.com/mounik0313n/vc-connect",
         demo: "",
