@@ -1,5 +1,6 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Linkedin, Github, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Github, Twitter, FileText, Download } from 'lucide-react';
+
 const ContactSection = () => {
   return <section id="contact" className="py-20 bg-white">
       <div className="container mx-auto px-4 md:px-8">
@@ -11,6 +12,30 @@ const ContactSection = () => {
               I'm currently looking for new opportunities to work on challenging data projects. 
               Whether you have a question or just want to say hi, I'll do my best to get back to you!
             </p>
+            
+            {/* Resume Options */}
+            <div className="mb-8">
+              <h3 className="text-lg font-semibold text-navy mb-4">My Resume</h3>
+              <div className="flex space-x-4">
+                <a 
+                  href="/s_cv.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center px-4 py-2 bg-navy text-white rounded-md hover:bg-tech transition-colors duration-300"
+                >
+                  <FileText className="w-5 h-5 mr-2" />
+                  View Resume
+                </a>
+                <a 
+                  href="/s_cv.pdf" 
+                  download
+                  className="flex items-center px-4 py-2 bg-tech text-navy rounded-md hover:bg-navy hover:text-white transition-colors duration-300"
+                >
+                  <Download className="w-5 h-5 mr-2" />
+                  Download Resume
+                </a>
+              </div>
+            </div>
             
             <div className="space-y-6">
               <div className="flex items-center">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, FileText } from 'lucide-react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 
 const Navbar = () => {
@@ -148,7 +148,7 @@ const Navbar = () => {
           </motion.a>
           
           {/* Enhanced Desktop Navigation */}
-          <ul className="hidden md:flex space-x-10">
+          <ul className="hidden md:flex space-x-10 items-center">
             {navLinks.map((link, index) => (
               <motion.li 
                 key={link.name}
@@ -181,6 +181,27 @@ const Navbar = () => {
                 </a>
               </motion.li>
             ))}
+            {/* Resume Button */}
+            <motion.li
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: navLinks.length * 0.1 }}
+            >
+              <a
+                href="/s_cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center px-4 py-2 bg-tech text-navy rounded-md hover:bg-navy hover:text-tech transition-colors duration-300 group"
+              >
+                <FileText className="w-5 h-5 mr-2" />
+                Resume
+                <motion.span 
+                  className="absolute bottom-0 left-0 w-0 h-px bg-tech group-hover:w-full transition-all duration-300"
+                  initial={{ width: 0 }}
+                  whileHover={{ width: "100%" }}
+                />
+              </a>
+            </motion.li>
           </ul>
           
           {/* Enhanced Mobile Menu Button */}
@@ -250,6 +271,30 @@ const Navbar = () => {
               </a>
             </motion.li>
           ))}
+          {/* Mobile Resume Button */}
+          <motion.li 
+            className="py-3"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ 
+              opacity: isOpen ? 1 : 0,
+              x: isOpen ? 0 : -20,
+            }}
+            transition={{ 
+              duration: 0.3,
+              delay: navLinks.length * 0.1,
+            }}
+          >
+            <a
+              href="/s_cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center px-6 py-3 text-lg text-slate hover:text-tech transition-colors"
+              onClick={toggleMenu}
+            >
+              <FileText className="w-5 h-5 mr-2" />
+              Resume
+            </a>
+          </motion.li>
         </ul>
       </motion.div>
     </motion.nav>
