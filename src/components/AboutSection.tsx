@@ -1,6 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+const KPICard = ({ value, title, description }) => (
+  <div className="bg-navy-light p-4 rounded-lg border border-tech hover:border-tech/50 transition-colors">
+    <div className="text-3xl font-bold text-tech">{value}</div>
+    <div className="text-white text-lg font-medium mt-2">{title}</div>
+    <div className="text-slate-300 text-sm mt-1">{description}</div>
+  </div>
+);
+
 const AboutSection = () => {
   // Animation variants
   const containerVariants = {
@@ -24,6 +32,34 @@ const AboutSection = () => {
       }
     }
   };
+
+  const kpis = [
+    {
+      value: "7+",
+      title: "Projects Delivered",
+      description: "Successfully completed and deployed projects across various domains including IOT"
+    },
+    {
+      value: "15+",
+      title: "Hackathons & Events",
+      description: "Active participation in technical competitions and industry events"
+    },
+    {
+      value: "3+",
+      title: "Events Managed",
+      description: "Successfully organized and coordinated technical events"
+    },
+    {
+      value: "6.07/10",
+      title: "CGPA",
+      description: "Consistent academic performance in Computer Science Engineering with strong technical foundation"
+    },
+    {
+      value: "3+",
+      title: "Months Internship",
+      description: "Hands-on experience in Data Science with real-world projects and industry exposure"
+    }
+  ];
 
   return (
     <section id="about" className="py-28 bg-gradient-to-b from-navy-light via-navy to-navy-dark relative overflow-hidden">
@@ -106,13 +142,13 @@ const AboutSection = () => {
                 className="text-slate text-lg leading-relaxed mb-8 relative z-10"
                 variants={itemVariants}
               >
-                I'm a passionate Data Engineer with extensive experience in designing, implementing, and optimizing data infrastructure. My journey in the data world started back in college, where I discovered my passion for transforming raw data into valuable insights.
+                I am an aspiring Data Engineer with a solid foundation in Python, Java, SQL, Power BI, and Machine Learning. I am dedicated to leveraging data to drive strategic decision-making and optimize operational processes. With a strong focus on data architecture and engineering, I am committed to continuously expanding my technical expertise to design, build, and maintain scalable data solutions. 
               </motion.p>
               <motion.p 
                 className="text-slate text-lg leading-relaxed relative z-10"
                 variants={itemVariants}
               >
-                I specialize in building efficient data pipelines, ETL processes, and working with various big data technologies. My goal is to create scalable and reliable data solutions that enable data-driven decision-making.
+                I have a keen interest in the integration of IoT and AI technologies across diverse industries, with the goal of developing innovative solutions that can transform sectors such as healthcare, smart cities, and more. I am eager to contribute to data-driven projects that have a meaningful impact while refining my skills and knowledge in the field of data engineering.
               </motion.p>
             </motion.div>
 
@@ -180,6 +216,20 @@ const AboutSection = () => {
             </div>
           </motion.div>
         </motion.div>
+
+        {/* KPI Section */}
+        <div className="mt-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+            {kpis.map((kpi, index) => (
+              <KPICard
+                key={index}
+                value={kpi.value}
+                title={kpi.title}
+                description={kpi.description}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

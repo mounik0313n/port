@@ -31,9 +31,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <span className="text-tech">AI</span>
-              <span className="mx-2">&</span>
-              <span className="text-tech">Data Engineering</span>
+              <span className="text-tech">Data Engineer</span>
             </motion.h2>
 
             {/* Description */}
@@ -43,8 +41,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              Building intelligent systems and scalable data pipelines that power AI-driven solutions.
-              Specializing in machine learning, big data processing, and cloud-native architectures.
+             "Transforming data into actionable insights, driving innovation through scalable solutions, and shaping the future with AI and IoT integration."
             </motion.p>
           </motion.div>
         </div>

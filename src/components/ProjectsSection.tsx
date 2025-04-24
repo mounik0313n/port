@@ -26,7 +26,7 @@ const ProjectsSection = () => {
   const projects: Project[] = [
     {
       title: "Railway Track Prediction System",
-      description: "Developed an innovative system using acoustic sensors for real-time railway track monitoring and prediction. Implemented machine learning algorithms to analyze acoustic patterns and predict potential track issues before they occur, enhancing railway safety and maintenance efficiency.",
+      description: "Developing an innovative system using acoustic sensors for real-time railway track monitoring and prediction. Implemented machine learning algorithms to analyze acoustic patterns and predict potential track issues before they occur, enhancing railway safety and maintenance efficiency.",
       image: "Screenshot 2025-04-23 at 13.43.13.png",
       tools: ["Python", "Machine Learning", "IoT", "Acoustic Sensors", "Real-time Analytics"],
       links: {
@@ -39,7 +39,7 @@ const ProjectsSection = () => {
     },
     {
       title: "US Pathway Analytics",
-      description: "Created an interactive Power BI dashboard analyzing US immigration pathways and trends. Visualized complex immigration data with dynamic filters, predictive analytics, and comprehensive reporting features to help users understand immigration patterns and opportunities.",
+      description: "Created an real time Power BI dashboard analyzing US immigration pathways and trends. Visualized complex immigration data with dynamic filters, predictive analytics, and comprehensive reporting features to help users understand immigration patterns and opportunities.",
       image: "Screenshot 2025-04-23 at 13.34.43.png",
       tools: ["Python", "Power BI", "Data Analytics", "SQL", "Data Visualization", "ETL"],
       links: {
@@ -51,7 +51,7 @@ const ProjectsSection = () => {
     },
     {
       title: "VC Connect Platform",
-      description: "Built a comprehensive platform connecting startups with venture capitalists. Features include profile matching, pitch deck sharing, virtual meetings, and investment tracking. Implemented secure document sharing and real-time communication tools.",
+      description: "Developing a comprehensive platform connecting startups with venture capitalists. Features include profile matching, pitch deck sharing, virtual meetings, and investment tracking. Implemented secure document sharing and real-time communication tools.",
       image: "/reddix.png",
       tools: ["React", "Node.js", "WebRTC", "MongoDB", "AWS"],
       links: {
@@ -318,7 +318,7 @@ const ProjectsSection = () => {
                       className="ml-auto inline-flex items-center text-tech group/link"
                       whileHover={{ x: 5 }}
                     >
-                      <span className="mr-2 font-medium">View Details</span>
+                      <span className="mr-2 font-medium"></span>
                       <ArrowRight size={18} className="transform transition-transform group-hover/link:translate-x-1" />
                     </motion.a>
                   </div>
@@ -326,34 +326,6 @@ const ProjectsSection = () => {
               </motion.div>
             </motion.div>
           ))}
-        </motion.div>
-        
-        {/* AI View More Button */}
-        <motion.div 
-          className="text-center mt-16"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <motion.a
-            href="#"
-            className="inline-flex items-center px-8 py-4 rounded-full bg-navy-light/80 backdrop-blur-sm 
-              border-2 border-tech/30 hover:border-tech hover:bg-tech/5 transition-all duration-300 
-              group relative overflow-hidden"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span className="relative z-10 font-medium text-white group-hover:text-tech transition-colors duration-300">
-              View More Projects
-            </span>
-            <ArrowRight 
-              size={20} 
-              className="ml-2 text-tech transform transition-transform group-hover:translate-x-1" 
-            />
-            {/* AI Button Glow */}
-            <div className="absolute inset-0 bg-gradient-to-r from-tech/0 via-tech/20 to-tech/0 
-              opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </motion.a>
         </motion.div>
       </div>
     </section>

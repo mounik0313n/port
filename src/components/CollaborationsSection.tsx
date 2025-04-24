@@ -29,21 +29,21 @@ const CollaborationsSection = () => {
       logo: "ignisveda.jpg",
       role: "Technology Solutions",
       website: "https://ignisvedasynergies.vercel.app/",
-      description: "Worked together on developing innovative software solutions and digital transformation initiatives."
+      description: "Driving innovation and research excellence at Ignis Veda, contributing to groundbreaking advancements through book chapters, academic papers, and patents."
     },
     {
       name: "Reddix",
       logo: "reddix.png",
       role: "Digital Innovation",
       website: "https://reddix.co.in/",
-      description: "Contributing as a part of team to develop ai based solutions for business development"
+      description: "Collaborating on AI-driven solutions for business development, contributing to multiple projects aimed at enhancing business growth and operational efficiency."
     },
     {
       name: "Thinkers Club",
       logo: "thinkerclub.jpg",
       role: "Innovation Hub",
       website: "#",
-      description: "Worked together on fostering innovation and implementing creative problem-solving approaches."
+      description: "Volunteered in a student club dedicated to fostering innovation and implementing creative problem-solving approaches, with a focus on enhancing skills in public speaking, debates, and social service."
     }
   ];
 
