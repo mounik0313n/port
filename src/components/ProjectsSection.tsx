@@ -43,7 +43,7 @@ const ProjectsSection = () => {
       image: "Screenshot 2025-04-23 at 13.34.43.png",
       tools: ["Python", "Power BI", "Data Analytics", "SQL", "Data Visualization", "ETL"],
       links: {
-        github: "https://github.com/mounik0313n/us-pathway-analytics",
+        github: "https://github.com/mounik0313n/Internship",
         demo: "https://drive.google.com/file/d/18U399L4GLyLeUGH17i7ydEN59o_uDL9x/view?usp=drivesdk",
       },
       icon: <Database className="w-8 h-8 text-tech" />,
