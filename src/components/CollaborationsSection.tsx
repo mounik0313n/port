@@ -41,7 +41,7 @@ const CollaborationsSection = () => {
     {
       name: "Thinkers Club",
       logo: "thinkerclub.jpg",
-      role: "Innovation Hub",
+      role: "Student Club",
       website: "#",
       description: "Volunteered in a student club dedicated to fostering innovation and implementing creative problem-solving approaches, with a focus on enhancing skills in public speaking, debates, and social service."
     }
