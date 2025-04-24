@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ExternalLink, Github, ArrowRight, Zap, Bot, Database, Network, Server } from 'lucide-react';
+import { ExternalLink, Github, ArrowRight, Zap, Bot, Database, Network, Server, FileText } from 'lucide-react';
 import { motion, useAnimation, useInView, useTransform, useSpring } from 'framer-motion';
 
 interface Project {
@@ -10,6 +10,7 @@ interface Project {
   links: {
     github?: string;
     demo?: string;
+    doc?: string;
   };
   icon: React.ReactNode;
   date: string;
@@ -31,6 +32,7 @@ const ProjectsSection = () => {
       links: {
         github: "https://github.com/mounik0313n/railway-track-prediction",
         demo: "",
+        doc: "https://docs.google.com/document/d/1P2r5A43rp3xBqGEZ_iwb44fHbz_a1DZJ6gySE3BHMS4/edit?usp=sharing"
       },
       icon: <Network className="w-8 h-8 text-tech" />,
       date: "december 2024 - Still working"
@@ -294,6 +296,18 @@ const ProjectsSection = () => {
                         whileTap={{ scale: 0.95 }}
                       >
                         <ExternalLink size={22} />
+                      </motion.a>
+                    )}
+                    {project.links.doc && (
+                      <motion.a
+                        href={project.links.doc}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-slate-300 hover:text-tech transition-colors duration-300"
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <FileText size={22} />
                       </motion.a>
                     )}
                     
